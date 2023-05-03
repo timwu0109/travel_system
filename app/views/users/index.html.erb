@@ -1,3 +1,38 @@
 <h1>hi</h1>
 
-<%=  link_to '新增資料' ,  new_user_path%>
+
+
+<thead>
+  <tr>
+    <td>中文名字</td>
+    <td>英文名字 </td>
+    <td>手機號碼</td>
+    <td>出生日期</td>
+    <td>護照號碼 </td>
+    <td>護照效期</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</thead>
+<tbody>
+  <% @users.each do |user|%>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% end %>
+</tbody>
+
+
+
+
+
+<%= link_to '新增資料' , new_user_path%>
