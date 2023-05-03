@@ -1,38 +1,29 @@
-<h1>hi</h1>
+<h1>旅客資訊表</h1>
 
+<%= link_to '新增旅客資料' , new_user_path%>
 
-
-<thead>
-  <tr>
-    <td>中文名字</td>
-    <td>英文名字 </td>
-    <td>手機號碼</td>
-    <td>出生日期</td>
-    <td>護照號碼 </td>
-    <td>護照效期</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</thead>
-<tbody>
-  <% @users.each do |user|%>
+<table>
+  <thead>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>中文名字</td>
+      <td>英文名字 </td>
+      <td>手機號碼</td>
+      <td>備註</td>
+      <td>編輯</td>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+    <tr>
+      <td><%= link_to user.ch_name , user_path(user)%></td>
+      <td><%=user.en_name%></td>
+      <td><%=user.phone_number%></td>
+      <td><%=user.other%></td>
     </tr>
     <% end %>
-</tbody>
+  </tbody>
+</table>
 
 
 
-
-
-<%= link_to '新增資料' , new_user_path%>
