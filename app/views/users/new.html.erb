@@ -1,0 +1,50 @@
+<h5>user/new</h5>
+
+<%=form_with model: User do |form|%>
+  <div>
+    <%= form.label :ch_name, "中文名字" %>
+    <%= form.text_field :ch_name %>
+  </div>
+
+  <div>
+    <%= form.label :en_name, "英文名字" %>
+    <%= form.text_field :en_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number , "手機號碼" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :b_day, "出生日期" %>
+    <%= form.date_field :b_day %>
+  </div>
+
+  <div>
+    <%= form.label :passport_number, "護照號碼" %>
+    <%= form.text_field :passport_number %>
+  </div>
+
+  <div>
+    <%= form.label :passport_date, "護照效期" %>
+    <%= form.date_field :passport_date %>
+  </div>
+
+  <div>
+    <%= form.label :passport_photo, "護照上傳" %>
+    <%= form.file_field :passport_photo %>
+  </div>
+
+  <div>
+    <%= form.label :travel_url, "行程網址" %>
+    <%= form.url_field :travel_url %>
+  </div>
+
+  <div>
+    <%= form.label :other, "特殊需求備註" %>
+    <%= form.text_field :other %>
+  </div>
+
+  <%=form.submit '送出' %>
+<%end%>
