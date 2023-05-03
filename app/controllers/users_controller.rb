@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user , only: %i[show, edit , update , destory]
+  before_action :find_user , only: [ :show, :edit , :update , :destroy]
 
   def index
     @users = User.all
@@ -13,18 +13,32 @@ class UsersController < ApplicationController
     @user = User.new(clean_user_data)
 
     if @user.save
-      redirect_to root_path , aleart: '資料新增成功！!!!!!!!!!!!!!!!!!'
+      redirect_to users_path, notice:'資料新增成功！!!!!!!!!!!!!!!!!!'
     else
       render :new
     end
   end
 
   def show
-    puts  params[:id]
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(clean_user_data)
+      redirect_to users_path, notice:'資料編輯成功！'
+    else
+      render :edit
+    end
+
   end
 
 
-
+  def destroy
+    @user.destroy
+    redirect_to users_path, notice:'資料已刪除!'
+  end
 
   private
   def clean_user_data
@@ -32,6 +46,6 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
   end
 end

@@ -1,17 +1,17 @@
-<h5>user/show</h5>
+<h1>旅客基本資料如下</h1>
 
-<table>
-  <thead>
-    <tr>
-      <td>中文名字</td>
-      <td>英文名字 </td>
-      <td>手機號碼</td>
-      <td>備註</td>
-      <td>編輯</td>
-      
-    </tr>
-  </thead>
-  <tbody>
+<h2>中文姓名：<%=@user.ch_name%></h2>
+<h2>英文姓名：<%=@user.en_name%></h2>
 
-  </tbody>
-</table>
+<ul>
+  <li>電話：<%=@user.phone_number%></li>
+  <li>生日：<%=@user.b_day%></li>
+  <li>護照號碼：<%=@user.passport_number%></li>
+  <li>護照效期：<%=@user.passport_date%></li>
+  <li>特殊需求：<%=@user.other%></li>
+  <li>行程網址：<%=@user.travel_url%></li>
+  <li>護照圖片：<%=@user.passport_photo%></li>
+</ul>
+
+
+<%= link_to '回首頁' , root_path%>

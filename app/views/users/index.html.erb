@@ -20,6 +20,10 @@
       <td><%=user.en_name%></td>
       <td><%=user.phone_number%></td>
       <td><%=user.other%></td>
+      <td>
+        <%= link_to '編輯資料' , edit_user_path(user)%>
+        <%= link_to '刪除資料' , user_path(user) , method: 'delete' , data: {confrim: "確定刪除？" }%>
+      </td>
     </tr>
     <% end %>
   </tbody>
