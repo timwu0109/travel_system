@@ -1,0 +1,2 @@
+class ChName < ApplicationRecord
+end
