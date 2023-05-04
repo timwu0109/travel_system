@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(clean_user_data)
 
     if @user.save
-      redirect_to users_path, notice:'資料新增成功！!!!!!!!!!!!!!!!!!'
+      redirect_to users_path, alert:'資料新增成功！!!!!!!!!!!!!!!!!!'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(clean_user_data)
-      redirect_to users_path, notice:'資料編輯成功！'
+      redirect_to users_path, alert:'資料編輯成功！'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path, notice:'資料已刪除!'
+    redirect_to users_path, alert:'資料已刪除!'
   end
 
   private
